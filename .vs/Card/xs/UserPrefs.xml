@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{7C1DE724-EBED-B4E4-4574-8C7DD8FD0397}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Global Classes/CardDatabase.cs">
+    <Files>
+      <File FileName="Assets/Scripts/CardScript.cs" Line="18" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/DeckScript.cs" IsPinned="True" />
+      <File FileName="Assets/Scripts/DelegateScript.cs" />
+      <File FileName="Assets/Scripts/PlayerScript.cs" />
+      <File FileName="Assets/Scripts/MonsterScript.cs" />
+      <File FileName="Assets/Global Classes/Character.cs" />
+      <File FileName="Assets/Scripts/MoveComponent.cs" />
+      <File FileName="Assets/Scripts/ClickComponent.cs" />
+      <File FileName="Assets/Scripts/G_InputHandlerScript.cs" />
+      <File FileName="Assets/Global Classes/CardDatabase.cs" Line="89" Column="1" />
+      <File FileName="Assets/Global Classes/Action.cs" Line="34" Column="31" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Card" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Global Classes" expanded="True">
+                <Node name="CardDatabase.cs" selected="True" />
+              </Node>
+              <Node name="Scripts" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7fba4a21-f0fa-4b5d-8702-3a0cefe7d2ee" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
