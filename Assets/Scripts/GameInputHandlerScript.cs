@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameHandlerScript : MonoBehaviour
+public class GameInputHandlerScript : MonoBehaviour
 {
     public DelegateScript handlerDelegateScript;
     public PlayerScript handlerPlayerScript;
@@ -17,7 +17,7 @@ public class GameHandlerScript : MonoBehaviour
     // Temporary Board for Milestone 1. Fill with monster.
     public GameObject[] Board = new GameObject[1];
 
-    public GameHandlerScript()
+    public GameInputHandlerScript()
     {
         isSearchingForTarget = false;
     }
@@ -72,17 +72,17 @@ public class GameHandlerScript : MonoBehaviour
         // TODO: the double switch statement is bothersome. When it comes time
         // for code optimization, see if there is another way to go about this.
         // =====================================================================
-        switch(actionToExecute.getChosenTarget().tag)
+        switch(actionToExecute.ChosenTarget.tag)
         {
             case "Monster":
-                MonsterScript dummyMS = actionToExecute.getChosenTarget().GetComponent<MonsterScript>();
-                switch(actionToExecute.getActionType())
+                MonsterScript dummyMS = actionToExecute.ChosenTarget.GetComponent<MonsterScript>();
+                switch(actionToExecute.Type)
                 {
                     case Action.ActionType.damage:
-                        dummyMS.takeDamage(actionToExecute.getAmount());
+                        dummyMS.takeDamage(actionToExecute.amount);
                         break;
                     case Action.ActionType.restore:
-                        dummyMS.takeDamage(actionToExecute.getAmount());
+                        dummyMS.takeDamage(actionToExecute.amount);
                         break;
                     default:
                         break;
@@ -96,17 +96,17 @@ public class GameHandlerScript : MonoBehaviour
                 break;
             case "Ally":
             case "Self":
-                PlayerScript dummyPS = actionToExecute.getChosenTarget().GetComponent<PlayerScript>();
-                switch (actionToExecute.getActionType())
+                PlayerScript dummyPS = actionToExecute.ChosenTarget.GetComponent<PlayerScript>();
+                switch (actionToExecute.Type)
                 {
                     case Action.ActionType.damage:
-                        dummyPS.takeDamage(actionToExecute.getAmount());
+                        dummyPS.takeDamage(actionToExecute.amount);
                         break;
                     case Action.ActionType.armor:
-                        dummyPS.gainArmor(actionToExecute.getAmount());
+                        dummyPS.gainArmor(actionToExecute.amount);
                         break;
                     case Action.ActionType.restore:
-                        dummyPS.restoreHealth(actionToExecute.getAmount());
+                        dummyPS.restoreHealth(actionToExecute.amount);
                         break;
                 }
                 break;
