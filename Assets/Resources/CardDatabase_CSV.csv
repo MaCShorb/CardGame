@@ -1,0 +1,54 @@
+CardName,CardText,CardCost,CardTier,CardType
+Punch,Deal 1 damage.,2,0,START
+Bandage,Restore 1 health.,2,0,START
+Stall,Do nothing.,1,0,START
+Lighten,Discard 1 card.,1,0,START
+Refuel,Draw 1 card.,1,0,START
+Brass Knuckles,Deal 2 damage.,3,1,CLUNK
+Double-Edged Dagger,Deal 3 damage to a monster and yourself.,2,1,CLUNK
+Staff of Projection,"Relic: Whenever you damage yourself, deal 2 damage. (2 charges)",1,1,CLUNK
+Spiked Uppercut,Deal 4 damage.,3,2,CLUNK
+Double-Edged Longsword,Deal 5 damage to a monster and yourself.,2,2,CLUNK
+Sick Note,"If you’ve damaged yourself this turn, draw 3 cards.",1,2,CLUNK
+Warrior's Sacrifice,"If you've damaged yourself more than once this turn, deal 2 damage to all monsters.",0,2,CLUNK
+Left Handed Traitor,"Deal 1 damage to yourself three times.",2,3,CLUNK
+Spirit Share,Deal 7 damage to a monster and yourself.,2,3,CLUNK
+Platinum Gauntlet,Deal 5 damage.,3,3,CLUNK
+Berserker Rage,Your damage dealing cards cost 1 this turn.,0,4,CLUNK
+Explosive Cry,"If you’ve damaged yourself this turn, deal 3 damage to all monsters.",1,4,CLUNK
+Potion of Revigoration,Draw 4 cards.,2,1,CYCLE
+Consuming Torch,Discard 3 cards.,2,1,CYCLE
+Carnivorous Satchel,"Relic: Whenever you discard a card, deal 1 damage. (2 charges) (1A)",1,1,CYCLE
+Badge of Abundance,"Relic: Whenever you draw a card, deal 2 damage (1 charge). (1A)",1,2,CYCLE
+Throw the Lot!,Deal damage equal to the amount of cards in your hand.,2,2,CYCLE
+Ticking Tuber,"When this card is discarded, deal 8 damage to a random monster.",2,2,CYCLE
+Confuzzle,Swap your draw pile with your discard pile.,0,2,CYCLE
+Last Resort,"If your hand is empty, deal 5 damage to all monsters.",0,3,CYCLE
+Hoarder's Medallion,Deal 10 damage. Costs 1 less for every other card in your hand. (10A),10,3,CYCLE
+Phoenix Spirit,Shuffle your hand into your draw pile. Draw an equal amount of cards.,0,3,CYCLE
+Staff of the Void,"Relic: Whenever you discard a card, deal 4 damage. (2 charges) (1A)",1,4,CYCLE
+Curious Crystal,"Relic: Whenever you draw a card, deal 8 damage. (1 charge) (1A)",1,4,CYCLE
+Garlic Necklace,Relic: All monster attacks target you (2 charges).,1,1,ABSORB
+Shield Up!,Gain 5 armor.,2,1,ABSORB
+Safety First,Give another player 3 armor.,1,1,ABSORB
+Old Man's Promise,"If a monster attacked you last turn, gain 10 armor.",2,2,ABSORB
+Portable Plates,Give all players 2 armor.,2,2,ABSORB
+Bash,"If you have 5 or more armor, deal 4 damage. Gain 3 armor.",1,2,ABSORB
+Fortification Matrix,Relic: All players take 50% less damage from monsters. (1 charge),2,2,ABSORB
+Experimental Voodoology,Give all other players 6 armor. Deal 6 damage to yourself.,2,3,ABSORB
+For Ol' Times Sake,Draw through your discard pile until you find a relic. Equip it.,1,3,ABSORB
+Rummage,"Draw 3 cards. For every green card drawn, gain 3 armor.",1,3,ABSORB
+Light Shield,Relic: All players with armor do not take damage from monsters. (1 charge),1,4,ABSORB
+Implement Alloy,Triple your armor.,1,4,ABSORB
+Rejuvenation,Status: Draw 2 cards.,1,1,BUFF
+Regeneration,Status: Restore 3 health to your self.,1,1,BUFF
+Medic's Bond,Restore 4 health to another player and yourself.,2,1,BUFF
+Conserver's Vial,"Relic: When your statuses expire, return it to your hand. (2 charges.)",1,2,BUFF
+Enrage,Status: Your cards deal +2 damage.,1,2,BUFF
+Pep Talk,Restore 2 health to all players.,2,2,BUFF
+Binding Beam,Restore 6 health.,1,2,BUFF
+Relative Dilation,Status: Gain 2 extra action chips this turn.,1,3,BUFF
+Group Therapy,Restore 4 health to all players.,2,3,BUFF
+Luther's Renewal,Restore another player and yourself to full health.,2,3,BUFF
+Magic Conch,"Relic: Whenever a player takes damage, they restore 6 health. (1 charge)",1,4,BUFF
+Orb of Blessing,Relic: All statuses trigger twice. (3 charges),2,4,BUFF

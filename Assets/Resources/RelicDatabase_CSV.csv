@@ -1,0 +1,12 @@
+RelicName,RelicText,RelicDurability,RelicType
+Staff of Projection,"Whenever you damage yourself, deal 2 damage.",2,CLUNK
+Carnivorous Satchel,"Whenever you discard a card, deal 1 damage.",2,CYCLE
+Badge of Abundance,"Whenever you draw a card, deal 2 damage.",1,CYCLE
+Staff of the Void,"Whenever you discard a card, deal 4 damage.",2,CYCLE
+Curious Crystal,"Whenever you draw a card, deal 8 damage.",1,CYCLE
+Garlic Necklace,All monster attacks target you.,2,ABSORB
+Fortification Matrix,All players take 50% less damage from monsters.,1,ABSORB
+Light Shield,All players with armor do not take damage from monsters.,1,BUFF
+Conserver’s Vial,"When your statuses expire, return it to your hand.",2,BUFF
+Magic Conch,"Whenever a player takes damage, they restore 6 health.",1,BUFF
+Orb of Blessing,All statuses trigger twice.,3,BUFF
