@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 public class CardScript : UIActionExecutor
 {
     public string Name { get; private set; }
@@ -30,7 +29,7 @@ public class CardScript : UIActionExecutor
 
     void SetCardVisuals()
     {
-        // =====================================================================
+      /*  // =====================================================================
         // Update function for Card Sprite and visual components.
         // =====================================================================
 
@@ -63,7 +62,7 @@ public class CardScript : UIActionExecutor
                     Debug.Log("I don't know this child of card!");
                     break;
             }
-        }
+        } */
 
         SpriteRenderer CardFrameSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 

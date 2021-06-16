@@ -1,0 +1,2 @@
+# Starting compiling GameAssembly.dll
+/Applications/Unity/Hub/Editor/2020.3.12f1/Unity.app/Contents/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-dc238f17d79f74e81901952966767286

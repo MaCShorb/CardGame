@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
-public static class CardDatabase : UIActionExecutorDatabase
+public class CardDatabase
 {
 
 
