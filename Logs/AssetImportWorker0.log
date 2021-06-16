@@ -84,3 +84,35 @@ Received Import Request.
 Start importing Assets/Scripts/GameAssembly.asmdef using Guid(e03bf4200cdce490b956f9d0a5f3209e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9acb4a2d701b1431b00c33612ecac687') in 0.432439 seconds 
   Import took 0.437220 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 383.554437 seconds.
+  path: Assets/Scripts/Classes/CommandDatabase.cs
+  artifactKey: Guid(b30ec40e1855a40dc8ae6a5649c9f9fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/CommandDatabase.cs using Guid(b30ec40e1855a40dc8ae6a5649c9f9fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7b1f8508a6accc30b21f6ae25d2f568') in 0.555324 seconds 
+  Import took 0.560825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 109.292009 seconds.
+  path: Assets/Scripts/Classes/RelicDatabase.cs
+  artifactKey: Guid(6c138a3bbf12646568fa518971cc3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/RelicDatabase.cs using Guid(6c138a3bbf12646568fa518971cc3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cda92e525f290ead9947b1be86a2eb90') in 0.005623 seconds 
+  Import took 0.012015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008111 seconds.
+  path: Assets/Scripts/Classes/RelicDatabase.cs
+  artifactKey: Guid(6c138a3bbf12646568fa518971cc3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/RelicDatabase.cs using Guid(6c138a3bbf12646568fa518971cc3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cda92e525f290ead9947b1be86a2eb90') in 0.002630 seconds 
+  Import took 0.013663 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.801121 seconds.
+  path: Assets/Scripts/Classes/RelicDatabase.cs
+  artifactKey: Guid(6c138a3bbf12646568fa518971cc3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Classes/RelicDatabase.cs using Guid(6c138a3bbf12646568fa518971cc3fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ca021a0c35385c7afd5c0b37d0a2b9f') in 0.002979 seconds 
+  Import took 0.010854 seconds .
+

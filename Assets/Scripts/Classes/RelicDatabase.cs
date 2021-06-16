@@ -7,7 +7,7 @@ public class RelicDatabase : UIActionExecutorDatabase
 {
     public RelicDatabase(PlayerScript playerScript, HistoryScript gameHistoryScript) : base(playerScript, gameHistoryScript, Resources.Load<GameObject>("Relic"))
     {
-
+        // Testing one two three four!
     }
 
     protected override void LikenSecondToFirstValuesForGetObject(GameObject first, GameObject second)
