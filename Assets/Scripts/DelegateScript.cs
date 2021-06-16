@@ -23,8 +23,8 @@ public class DelegateScript : MonoBehaviour
     {
         // TODO: Code sent to gamehandlers of each player, differentiated between
         // each according to their screen, animation requirements, etc.
-        G_InputHandlerScript dummyG_IHS = player1_G_InputHandler.GetComponent<G_InputHandlerScript>();
-        dummyG_IHS.processActionFromDelegate(action);
+        GameInputHandlerScript dummyG_IHS = player1_G_InputHandler.GetComponent<GameInputHandlerScript>();
+        dummyG_IHS.ProcessActionFromDelegate(action);
     }
 
 }

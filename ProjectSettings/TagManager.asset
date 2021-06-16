@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Card
-  - Monster
+  - CARD
+  - MONSTER
+  - ALLY
+  - SELF
+  - CARD_PLAYED
+  - EXECUTING
+  - RELIC
   layers:
   - Default
   - TransparentFX

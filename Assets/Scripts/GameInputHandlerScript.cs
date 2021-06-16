@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameInputHandlerScript : MonoBehaviour
 {
     public DelegateScript handlerDelegateScript;
-    public PlayerScript handlerPlayerScript;
+    List<string> ViableTargetTags;
 
     public GameObject temporaryMonster; //temporary (duh)
 
-    public bool isSearchingForTarget { get; private set; }
-    public Action.Targets[] searchViableTargets { get; private set; }
-    GameObject chosenTarget = null;
-    GameObject cardOfActionExecuting;
+    public event EventHandler<GameObject> TargetSelected;
+    public event EventHandler ActionExecuted;
+    public event EventHandler NoTargetsFound;
 
     // Temporary Board for Milestone 1. Fill with monster.
     public GameObject[] Board = new GameObject[1];
 
     public GameInputHandlerScript()
     {
-        isSearchingForTarget = false;
+
     }
 
     // Start is called before the first frame update
@@ -28,106 +28,100 @@ public class GameInputHandlerScript : MonoBehaviour
         Board[0] = temporaryMonster;
     }
 
-    public void beginSearchForTarget(Action.Targets[] targets, GameObject cardSender)
+    List<GameObject> GetViableTargetObjects()
     {
-        searchViableTargets = targets;
-        isSearchingForTarget = true;
-        cardOfActionExecuting = cardSender;
-        Debug.Log("Beginning search for target!");
-    }
+        List<GameObject> returnList = new List<GameObject>();
 
-    public void endSearchForTarget(bool continueExecutionCardActions)
-    {
-        searchViableTargets = new Action.Targets[0];
-        isSearchingForTarget = false;
-        // =====================================================================
-        // GameHandler only continues card action execution if specifically told 
-        // that it should. This allows for cancelling of actions. Also reason
-        // why setChosenTarget and endSearchForTarget are seperate functions.
-        // =====================================================================
-        if (continueExecutionCardActions)
+        foreach (string tag in ViableTargetTags)
         {
-            CardScript dummyCS = cardOfActionExecuting.GetComponent<CardScript>();
-            dummyCS.setTargetExecutingAction(chosenTarget);
-            chosenTarget = null;
-            
-            // Not sent straight to delegate because card condition still has to be
-            // evaluated.
-
-            dummyCS.executeAction();
-            
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag(tag))
+            {
+                returnList.Add(obj);
+            }
         }
+        return returnList;
     }
 
-    public void sendActionToDelegate(Action action, GameObject cardSender)
+    public void BeginSearchForTarget(List<string> ViableTargetTags)
+    {
+        this.ViableTargetTags = ViableTargetTags;
+        // =====================================================================
+        // Subscribe to viable targets
+        // =====================================================================
+        if (GetViableTargetObjects().Count == 0)
+        {
+            OnNoTargetsFound();
+        }
+        else
+        {
+            foreach (GameObject obj in GetViableTargetObjects())
+            {
+                try
+                {
+                    ClickComponent dummyCC = obj.GetComponent<ClickComponent>();
+                    dummyCC.MouseUp += HandleTargetSelection;
+                }
+                catch
+                {
+                    Debug.Log("ERROR: Attempt to access click component that does not exist. GameHandler, BeginSearchForTarget");
+                }
+            }
+        }
+     //   Debug.Log("Beginning search for target!");
+    }
+
+    void HandleTargetSelection(object sender, GameObject obj)
+    {
+        // =====================================================================
+        // Unsubscribe from viable targets
+        // =====================================================================
+        foreach (GameObject objX in GetViableTargetObjects())
+        {
+            try
+            {
+                ClickComponent dummyCC = objX.GetComponent<ClickComponent>();
+                dummyCC.MouseUp -= HandleTargetSelection;
+            }
+            catch
+            {
+                Debug.Log("ERROR: Attempt to access click component that does not exist. GameHandler, BeginSearchForTarget");
+            }
+        }
+        OnTargetSelected(obj);
+    }
+
+    // Find way to remove
+    public void SendActionToDelegate(Action action)
     {
         handlerDelegateScript.delegateAction(action);
-        cardOfActionExecuting = cardSender;
     }
 
-    public void processActionFromDelegate(Action action)
+    public void ProcessActionFromDelegate(Action action)
     {
-        Action actionToExecute = action;
-        // =====================================================================
-        // TODO: the double switch statement is bothersome. When it comes time
-        // for code optimization, see if there is another way to go about this.
-        // =====================================================================
-        switch(actionToExecute.ChosenTarget.tag)
-        {
-            case "Monster":
-                MonsterScript dummyMS = actionToExecute.ChosenTarget.GetComponent<MonsterScript>();
-                switch(actionToExecute.Type)
-                {
-                    case Action.ActionType.damage:
-                        dummyMS.takeDamage(actionToExecute.amount);
-                        break;
-                    case Action.ActionType.restore:
-                        dummyMS.takeDamage(actionToExecute.amount);
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case "Deck":
-                // TODO: Add in code for DeckScript
-                break;
-            case "Board":
-                // TODO: Add in code for BoardScript
-                break;
-            case "Ally":
-            case "Self":
-                PlayerScript dummyPS = actionToExecute.ChosenTarget.GetComponent<PlayerScript>();
-                switch (actionToExecute.Type)
-                {
-                    case Action.ActionType.damage:
-                        dummyPS.takeDamage(actionToExecute.amount);
-                        break;
-                    case Action.ActionType.armor:
-                        dummyPS.gainArmor(actionToExecute.amount);
-                        break;
-                    case Action.ActionType.restore:
-                        dummyPS.restoreHealth(actionToExecute.amount);
-                        break;
-                }
-                break;
-            case "Card":
-                //TODO: If discard, trigger discard function in deck.hand using target (the card)
-                //TODO: If price_reduction, just call price reduction.
-                // Multiple commands, multiple targets when cards are involved.
-                break;
-            default:
-                Debug.Log("Default, first layer switch processActionFromDelegate");
-                break;
-        }
-        CardScript dummyCS = cardOfActionExecuting.GetComponent<CardScript>();
-        dummyCS.executeAction();
+        action.Execute();
+        OnActionExecuted(EventArgs.Empty);
     }
 
-    public void setChosenTarget(GameObject target)
+    public void SetTarget(GameObject Target)
     {
-        chosenTarget = target;
-        Debug.Log("Target Chosen!");
-        endSearchForTarget(continueExecutionCardActions: true);
+        Debug.Log("Target Set!");
+        OnTargetSelected(Target);
     }
-    
+
+    protected virtual void OnTargetSelected(GameObject Target)
+    {
+        TargetSelected?.Invoke(this, Target);
+    }
+
+    protected virtual void OnActionExecuted(EventArgs e)
+    {
+        ActionExecuted?.Invoke(this, e);
+    }
+
+    protected virtual void OnNoTargetsFound()
+    {
+        Debug.Log("No Targets!");
+        NoTargetsFound?.Invoke(this, EventArgs.Empty);
+    }
+
 }
