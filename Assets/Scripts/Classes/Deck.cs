@@ -25,7 +25,7 @@ public class Deck
         DrawPile = new List<GameObject>();
 
         // Create starting deck:
-        MyCardDatabase = new CardDatabase(playerScript, gameHistoryScript);
+      /*  MyCardDatabase = new CardDatabase(playerScript, gameHistoryScript);
 
         DrawPile.Insert(0, MyCardDatabase.GetObject("Platinum Gauntlet"));
         DrawPile.Insert(0, MyCardDatabase.GetObject("Lighten"));
@@ -33,7 +33,7 @@ public class Deck
         DrawPile.Insert(0, MyCardDatabase.GetObject("Binding Beam"));
         DrawPile.Insert(0, MyCardDatabase.GetObject("Refuel"));
         DrawPile.Insert(0, MyCardDatabase.GetObject ("Consuming Torch"));
-
+      */
         // Create CardDatabase class, feeding in parameter playerOwnerScript.
         // Add to Draw Pile every starting card.
         // Shuffle. If function calling not permitted within init, call shuffle
